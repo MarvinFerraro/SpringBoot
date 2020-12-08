@@ -8,10 +8,10 @@
 		<version>2.4.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.JAVA</groupId>
-	<artifactId>SpingBoot</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>SpringBoot</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpingBoot</name>
+	<name>SpringBoot</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
