@@ -1,7 +1,7 @@
 package com.example.SpringBoot.web.controller;
 
-import com.example.SpringBoot.dao.PersonnageDao;
-import com.example.SpringBoot.model.Personnage;
+import com.example.SpringBoot.dao.CharacterDao;
+import com.example.SpringBoot.model.Character;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,27 +11,27 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api( description="API pour les CRUD des personnages")
+@Api( description="CRUD for all CharacterController")
 @RestController
 
-public class PersonnageController {
+public class CharacterController {
 
     @Autowired
-    private PersonnageDao<Personnage> IPersonnageDao;
+    private CharacterDao<Character> ICharacterDao;
 
     private final String BASE_URL = "/personnages";
 
-    @ApiOperation(value = "Get list of all personnage")
+    @ApiOperation(value = "Get list of all Character")
     @GetMapping(value = BASE_URL)
-    public ResponseEntity<List<Personnage>> DisplayPersonnage() {
-        return new ResponseEntity<>(IPersonnageDao.findAll(), HttpStatus.OK);
+    public ResponseEntity<List<Character>> DisplayCharacter() {
+        return new ResponseEntity<>(ICharacterDao.findAll(), HttpStatus.OK);
     }
 
-    //Récupérer un Personnage par son Id
+    @ApiOperation(value = "Get Character by id")
     @GetMapping(value = BASE_URL + "/{id}")
-    public ResponseEntity<Personnage> DisplayById(@PathVariable("id") int id) {
+    public ResponseEntity<Character> DisplayById(@PathVariable("id") int id) {
 
-        Personnage response = IPersonnageDao.findById(id);
+        Character response = ICharacterDao.findById(id);
 
         if( response != null) {
             return new ResponseEntity<>(response, HttpStatus.OK);
@@ -40,29 +40,32 @@ public class PersonnageController {
         }
     }
 
+    @ApiOperation(value = "Add new Character")
     @PostMapping(value = BASE_URL)
-    public ResponseEntity<Personnage> CreatePersonnage(@RequestBody Personnage input) {
-        return new ResponseEntity<>(IPersonnageDao.save(input), HttpStatus.OK);
+    public ResponseEntity<Character> CreateCharacter(@RequestBody Character characterInput) {
+        return new ResponseEntity<>(ICharacterDao.save(characterInput), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "Delete a Character")
     @DeleteMapping(value = BASE_URL + "/{id}")
     public ResponseEntity<Void> Delete(@PathVariable int id) {
-        Boolean PersonnageDelete = IPersonnageDao.delete(id);
+        Boolean CharacterDelete = ICharacterDao.delete(id);
 
-        if(PersonnageDelete) {
+        if(CharacterDelete) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
+    @ApiOperation(value = "Update a Character")
     @PutMapping(value = BASE_URL + "/{id}")
-    public ResponseEntity<Personnage> Udpate(@PathVariable int id, @RequestBody Personnage input) {
+    public ResponseEntity<Character> Udpate(@PathVariable int id, @RequestBody Character characterInput) {
 
-        Personnage response = IPersonnageDao.findById(id);
+        Character response = ICharacterDao.findById(id);
 
         if( response != null) {
-            response = IPersonnageDao.update(id, input);
+            response = ICharacterDao.update(id, characterInput);
             return new ResponseEntity<>(response, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

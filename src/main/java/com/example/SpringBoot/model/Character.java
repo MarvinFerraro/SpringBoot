@@ -2,13 +2,13 @@ package com.example.SpringBoot.model;
 
 import java.util.UUID;
 
-public class Personnage {
+public class Character {
 
     public int id;
     public String name;
     public String pclass;
 
-    public Personnage(int id, String name, String pClass) {
+    public Character(int id, String name, String pClass) {
         this.id = id;
         this.name = name;
         this.pclass = pClass;

@@ -1,10 +1,7 @@
 package com.example.SpringBoot.dao;
 import java.util.List;
-import java.util.UUID;
 
-import com.example.SpringBoot.model.Personnage;
-
-public interface PersonnageDao<T> {
+public interface CharacterDao<T> {
 
     //GET
     List<T> findAll();
