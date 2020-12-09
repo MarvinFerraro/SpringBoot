@@ -1,13 +1,23 @@
 package com.example.SpringBoot.dao;
 import java.util.List;
+import java.util.UUID;
 
 import com.example.SpringBoot.model.Personnage;
 
-public interface PersonnageDao {
+public interface PersonnageDao<T> {
 
-    List<Personnage> FindAll();
+    //GET
+    List<T> findAll();
 
-    Personnage PersonnageFindById(int id);
+    //GETBYID
+    T findById(int id);
 
-    Personnage PersonnageSave(Personnage personnage);
+    //POST
+    T save(T personnage);
+
+    //PUT
+    T update(int id,T input);
+
+    //DELETE
+    boolean delete(int id);
 }

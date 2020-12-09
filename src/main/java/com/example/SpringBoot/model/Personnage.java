@@ -1,44 +1,36 @@
 package com.example.SpringBoot.model;
 
+import java.util.UUID;
+
 public class Personnage {
 
-    public int Id;
-    public String Name;
-    public String Pclass;
+    public int id;
+    public String name;
+    public String pclass;
 
     public Personnage(int id, String name, String pClass) {
-        Id = id;
-        Name = name;
-        Pclass = pClass;
-    }
-
-    public String ToString() {
-        return "id :" + Id + ", class :"+ Pclass + ", name :"+ Name;
+        this.id = id;
+        this.name = name;
+        this.pclass = pClass;
     }
 
     public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
+        return id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getPclass() {
-        return Pclass;
+        return pclass;
     }
 
-    public void setPclass(String pClass) {
-        Pclass = pClass;
+    public void setPclass(String pclass) {
+        this.pclass = pclass;
     }
-
-
 }
