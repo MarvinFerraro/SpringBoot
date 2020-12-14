@@ -1,17 +1,19 @@
 package com.example.SpringBoot.model;
 
-import java.util.UUID;
-
 public class Character {
 
     public int id;
     public String name;
-    public String pclass;
+    public String type;
+
+    public Character() {
+
+    }
 
     public Character(int id, String name, String pClass) {
         this.id = id;
         this.name = name;
-        this.pclass = pClass;
+        this.type = pClass;
     }
 
     public int getId() {
@@ -26,11 +28,11 @@ public class Character {
         this.name = name;
     }
 
-    public String getPclass() {
-        return pclass;
+    public String getType() {
+        return type;
     }
 
-    public void setPclass(String pclass) {
-        this.pclass = pclass;
+    public void setType(String type) {
+        this.type = type;
     }
 }

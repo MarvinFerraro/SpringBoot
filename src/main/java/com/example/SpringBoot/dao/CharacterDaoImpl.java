@@ -38,7 +38,7 @@ public class CharacterDaoImpl implements CharacterDao<Character> {
 
     @Override
     public Character save(Character character) {
-        Character newCharacter = new Character(counter++, character.getName(), character.getPclass());
+        Character newCharacter = new Character(counter++, character.getName(), character.getType());
         ListAllPerso.add(newCharacter);
         return newCharacter;
     }
@@ -50,7 +50,7 @@ public class CharacterDaoImpl implements CharacterDao<Character> {
 
         if (putCharacter != null) {
             putCharacter.setName(input.getName());
-            putCharacter.setPclass(input.getPclass());
+            putCharacter.setType(input.getType());
         }
         return putCharacter;
     }
