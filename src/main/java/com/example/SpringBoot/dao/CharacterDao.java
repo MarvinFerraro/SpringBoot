@@ -1,4 +1,4 @@
-package com.example.SpringBoot.dao;
+/*package com.example.SpringBoot.dao;
 import java.util.List;
 
 public interface CharacterDao<T> {
@@ -18,3 +18,4 @@ public interface CharacterDao<T> {
     //DELETE
     boolean delete(int id);
 }
+*/

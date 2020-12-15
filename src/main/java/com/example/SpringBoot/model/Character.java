@@ -1,20 +1,19 @@
 package com.example.SpringBoot.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "characters")
 public class Character {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
-    public int id;
-    public String name;
-    public String type;
+    @Column(name = "name", length = 30, nullable = false)
+    private String name;
 
-    public Character() {
-
-    }
-
-    public Character(int id, String name, String pClass) {
-        this.id = id;
-        this.name = name;
-        this.type = pClass;
-    }
+    @Column(name = "type", length = 30, nullable = false)
+    private String type;
 
     public int getId() {
         return id;

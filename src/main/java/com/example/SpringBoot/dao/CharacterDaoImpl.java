@@ -1,4 +1,4 @@
-package com.example.SpringBoot.dao;
+/*package com.example.SpringBoot.dao;
 
 import com.example.SpringBoot.model.Character;
 import org.springframework.stereotype.Repository;
@@ -67,3 +67,4 @@ public class CharacterDaoImpl implements CharacterDao<Character> {
         return removeCharacter != null;
     }
 }
+*/
